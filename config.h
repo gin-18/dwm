@@ -16,19 +16,40 @@ static const int showbar                    = 1;        /* 0 means no bar */
 static const int topbar                     = 1;        /* 0 means bottom bar */
 static const char *fonts[]                  = { "fira code:size=18" };
 static const char dmenufont[]               = "fira code:size=18";
+/* colors */
 static const char col_1[]                   = "#d4c4d1";
 static const char col_2[]                   = "#665879";
 static const char col_3[]                   = "#ffffff";
-static const char col_4[]                   = "#eeeeee";
-static const char col_5[]                   = "#93859f";
-static const char col_6[]                   = "#e6e6fa";
+static const char col_4[]                   = "#93859f";
+static const char col_5[]                   = "#e6e6fa";
+/* Snow Storm */
+static const char col_6[]                   = "#e5e9f0";
+static const char col_7[]                   = "#e5e9f0";
+static const char col_8[]                   = "#d8dee9";
+/* Polar Night */
+static const char col_9[]                   = "#2e3440";
+static const char col_10[]                  = "#3b4252";
+static const char col_11[]                  = "#434c5e";
+static const char col_12[]                  = "#4c566a";
+/* Frost */
+static const char col_13[]                  = "#8fbcbb";
+static const char col_14[]                  = "#88c0d0";
+static const char col_15[]                  = "#81a1c1";
+static const char col_16[]                  = "#5e81ac";
+/* Aurora */
+static const char col_17[]                  = "#bf616a";
+static const char col_18[]                  = "#d08770";
+static const char col_19[]                  = "#ebcb8b";
+static const char col_20[]                  = "#a3be8c";
+static const char col_21[]                  = "#b48ead";
+
 static const unsigned int baralpha          = 0xd0;
 static const unsigned int borderalpha       = OPAQUE;
 static const char *colors[][3] = {
     /*               fg     bg     border */
-    [SchemeNorm] = { col_3, col_2, col_2 },
-    [SchemeSel]  = { col_3, col_5, col_1 },
-    [SchemeHid]  = { col_2, col_1, col_5 },
+    [SchemeNorm] = { col_7, col_10, col_12 },
+    [SchemeSel]  = { col_7, col_12, col_8 },
+    [SchemeHid]  = { col_8, col_9,  col_9  },
 };
 static const unsigned int alphas[][3]      = {
     /*               fg      bg        border     */
