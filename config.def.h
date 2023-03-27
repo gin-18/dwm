@@ -3,10 +3,6 @@
 /* appearance */
 static const unsigned int borderpx          = 3;        /* border pixel of windows */
 static const unsigned int snap              = 32;       /* snap pixel */
-static const unsigned int systraypinning    = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayspacing    = 2;   /* systray spacing */
-static const int systraypinningfailfirst    = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray                = 0;     /* 0 means no systray */
 static const unsigned int gappih            = 6;       /* horiz inner gap between windows */
 static const unsigned int gappiv            = 6;       /* vert inner gap between windows */
 static const unsigned int gappoh            = 6;       /* horiz outer gap between windows and screen edge */
@@ -40,18 +36,16 @@ static const char col_19[]                  = "#ebcb8b";
 static const char col_20[]                  = "#a3be8c";
 static const char col_21[]                  = "#b48ead";
 
-static const unsigned int baralpha          = OPAQUE;
-static const unsigned int borderalpha       = OPAQUE;
 static const char *colors[][3] = {
-    /*               fg     bg     border */
-    [SchemeNorm] = { col_8, col_9, col_12 },
-    [SchemeSel]  = { col_8, col_11, col_8 },
-    [SchemeHid]  = { col_8, col_9,  col_9  },
-};
-static const unsigned int alphas[][3]      = {
-    /*               fg      bg        border     */
-    [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
-    [SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+    /*                    fg     bg      border */
+    [SchemeNorm]      = { col_8, col_9,  col_12 },
+    [SchemeSel]       = { col_8, col_9,  col_8 },
+    [SchemeHid]       = { col_8, col_9,  col_9  },
+    [SchemeStatus]    = { col_8, col_9,  col_9  }, // Statusbar right {text,background,not used but cannot be empty}
+    [SchemeTagsSel]   = { col_8, col_11,  col_9  }, // Tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsNorm]  = { col_8, col_9,  col_9  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+    [SchemeInfoSel]   = { col_8, col_9,  col_9  }, // infobar middle  selected {text,background,not used but cannot be empty}
+    [SchemeInfoNorm]  = { col_8, col_9,  col_9  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
 /* tagging */
