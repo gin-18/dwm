@@ -38,11 +38,14 @@ static const char col_21[]                  = "#b48ead";
 
 static const char *colors[][3] = {
     /*                    fg     bg      border */
+    [SchemeDate]      = { col_8, col_17,  col_9 },
     [SchemeNorm]      = { col_8, col_9,  col_12 },
-    [SchemeSel]       = { col_8, col_9,  col_8 },
+    [SchemeSel]       = { col_8, col_9,  col_8  },
     [SchemeHid]       = { col_8, col_9,  col_9  },
+    [SchemeWarn]      = { col_9, col_17, col_17 },
+    [SchemeUrgent]    = { col_9, col_19, col_17 },
     [SchemeStatus]    = { col_8, col_9,  col_9  }, // Statusbar right {text,background,not used but cannot be empty}
-    [SchemeTagsSel]   = { col_8, col_11,  col_9  }, // Tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsSel]   = { col_8, col_11, col_9  }, // Tagbar left selected {text,background,not used but cannot be empty}
     [SchemeTagsNorm]  = { col_8, col_9,  col_9  }, // Tagbar left unselected {text,background,not used but cannot be empty}
     [SchemeInfoSel]   = { col_8, col_9,  col_9  }, // infobar middle  selected {text,background,not used but cannot be empty}
     [SchemeInfoNorm]  = { col_8, col_9,  col_9  }, // infobar middle  unselected {text,background,not used but cannot be empty}
