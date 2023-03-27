@@ -14,14 +14,11 @@ static const unsigned int gappov            = 6;       /* vert outer gap between
 static const int smartgaps                  = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar                    = 1;        /* 0 means no bar */
 static const int topbar                     = 1;        /* 0 means bottom bar */
-static const char *fonts[]                  = { "fira code:size=18" };
-static const char dmenufont[]               = "fira code:size=18";
+static const int user_bh                    = 10;        /* 2 is the default spacing around the bar's font */
+// static const char *fonts[]                  = { "JetBrainsMono Nerd Font Mono:style:medium:pixelsize=18" };
+static const char *fonts[]                  = { "FiraCode Medium:pixelsize=19" };
+static const char dmenufont[]               = "FiraCode Medium:pixelsize=19";
 /* colors */
-static const char col_1[]                   = "#d4c4d1";
-static const char col_2[]                   = "#665879";
-static const char col_3[]                   = "#ffffff";
-static const char col_4[]                   = "#93859f";
-static const char col_5[]                   = "#e6e6fa";
 /* Snow Storm */
 static const char col_6[]                   = "#e5e9f0";
 static const char col_7[]                   = "#e5e9f0";
@@ -43,12 +40,12 @@ static const char col_19[]                  = "#ebcb8b";
 static const char col_20[]                  = "#a3be8c";
 static const char col_21[]                  = "#b48ead";
 
-static const unsigned int baralpha          = 0xd0;
+static const unsigned int baralpha          = OPAQUE;
 static const unsigned int borderalpha       = OPAQUE;
 static const char *colors[][3] = {
     /*               fg     bg     border */
-    [SchemeNorm] = { col_7, col_10, col_12 },
-    [SchemeSel]  = { col_7, col_12, col_8 },
+    [SchemeNorm] = { col_8, col_9, col_12 },
+    [SchemeSel]  = { col_8, col_11, col_8 },
     [SchemeHid]  = { col_8, col_9,  col_9  },
 };
 static const unsigned int alphas[][3]      = {
@@ -58,7 +55,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "➊ ‧ 🌼", "➋ ‧ 🌐", "➌ ‧ 💻", "➍ ‧ 🎨", "➎ ‧ 🎮", "➏ ‧ 🎴", "➐ ‧ 🎲", "➑ ‧ 🎤", "➒ ‧ 📸" };
+static const char *tags[] = { "", "", "", "", "" };
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -89,9 +86,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    { " Ⓣ ",      tile },    /* first entry is default */
-    { " Ⓕ ",      NULL },    /* no layout function means floating behavior */
-    { " Ⓜ ",      monocle },
+    { "",      tile },    /* first entry is default */
+    { "",      NULL },    /* no layout function means floating behavior */
+    { " ",      monocle },
 };
 
 /* key definitions */
