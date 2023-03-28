@@ -873,7 +873,6 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 	return ret;
 }
 
->>>>>>> c25e2d2 (show color in status bar)
 void
 drawbar(Monitor *m)
 {

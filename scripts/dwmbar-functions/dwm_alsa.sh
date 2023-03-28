@@ -1,47 +1,14 @@
 #!/bin/sh
 
-<<<<<<< HEAD
 dwm_alsa () {
   VOL=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
   if [ "$VOL" -eq 0 ]; then
-    printf "婢"
+    printf "^b#5e81ac^^c#d8dee9^ 婢 "
   elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 66 ]; then
-    printf "奔 %s%%" "$VOL"
+    printf "^b#5e81ac^^c#d8dee9^ 奔 ^b#2e3440^ %s%%" "$VOL"
   else
-    printf "墳 %s%%" "$VOL"
+    printf "^b#5e81ac^^c#d8dee9^ 墳 ^b#2e3440^ %s%%" "$VOL"
   fi
 }
 
 dwm_alsa
-=======
-# A dwm_bar function to show the master volume of ALSA
-# Joe Standring <git@joestandring.com>
-# GNU GPLv3
-
-# Dependencies: alsa-utils
-
-dwm_alsa () {
-    VOL=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
-    printf "%s" "$SEP1"
-    if [ "$IDENTIFIER" = "unicode" ]; then
-        if [ "$VOL" -eq 0 ]; then
-            printf "婢"
-        elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 66 ]; then
-            printf "奔 %s%%" "$VOL"
-        else
-            printf "墳 %s%%" "$VOL"
-        fi
-    else
-        if [ "$VOL" -eq 0 ]; then
-            printf "MUTE"
-        elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 33 ]; then
-            printf "VOL %s%%" "$VOL"
-        elif [ "$VOL" -gt 33 ] && [ "$VOL" -le 66 ]; then
-            printf "VOL %s%%" "$VOL"
-        else
-            printf "VOL %s%%" "$VOL"
-        fi
-    fi
-    printf "%s\n" "$SEP2"
-}
->>>>>>> c25e2d2 (show color in status bar)

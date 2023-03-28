@@ -6,9 +6,9 @@ dwm_battery () {
   STATUS=$(cat /sys/class/power_supply/BAT0/status)
 
   if [ "$STATUS" = "Charging" ]; then
-    printf " %s%% %s" "$CHARGE"
+    printf "^b#a3be8c^^c#2e3440^  ^b#2e3440^^c#a3be8c^ %s%% %s" "$CHARGE"
   else
-    printf " %s%% %s" "$CHARGE"
+    printf "^b#a3be8c^^c#2e3440^  ^b#2e3440^^c#a3be8c^ %s%% %s" "$CHARGE"
   fi
 }
 

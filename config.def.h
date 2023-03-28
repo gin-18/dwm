@@ -12,8 +12,8 @@ static const int showbar                    = 1;        /* 0 means no bar */
 static const int topbar                     = 1;        /* 0 means bottom bar */
 static const int user_bh                    = 10;        /* 2 is the default spacing around the bar's font */
 // static const char *fonts[]                  = { "JetBrainsMono Nerd Font Mono:style:medium:pixelsize=18" };
-static const char *fonts[]                  = { "FiraCode Medium:pixelsize=19" };
-static const char dmenufont[]               = "FiraCode Medium:pixelsize=19";
+static const char *fonts[]                  = { "FiraCode Medium:pixelsize=19:antialias=true:autohint=true" };
+static const char dmenufont[]               = "FiraCode Medium:pixelsize=19:antialias=true:autohint=true";
 /* colors */
 /* Snow Storm */
 static const char col_6[]                   = "#e5e9f0";
@@ -39,10 +39,10 @@ static const char col_21[]                  = "#b48ead";
 static const char *colors[][3] = {
     /*                    fg     bg      border */
     [SchemeNorm]      = { col_8, col_9,  col_12 },
-    [SchemeSel]       = { col_8, col_9,  col_8 },
+    [SchemeSel]       = { col_8, col_9,  col_8  },
     [SchemeHid]       = { col_8, col_9,  col_9  },
     [SchemeStatus]    = { col_8, col_9,  col_9  }, // Statusbar right {text,background,not used but cannot be empty}
-    [SchemeTagsSel]   = { col_8, col_11,  col_9  }, // Tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsSel]   = { col_8, col_11, col_9  }, // Tagbar left selected {text,background,not used but cannot be empty}
     [SchemeTagsNorm]  = { col_8, col_9,  col_9  }, // Tagbar left unselected {text,background,not used but cannot be empty}
     [SchemeInfoSel]   = { col_8, col_9,  col_9  }, // infobar middle  selected {text,background,not used but cannot be empty}
     [SchemeInfoNorm]  = { col_8, col_9,  col_9  }, // infobar middle  unselected {text,background,not used but cannot be empty}

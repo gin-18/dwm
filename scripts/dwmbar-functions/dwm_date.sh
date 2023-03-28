@@ -2,11 +2,7 @@
 
 dwm_date () {
     Date=$(date +'%Y/%m/%d %a %H:%M')
-<<<<<<< HEAD
-    printf "\x01  $Date"
-=======
-    printf " $Date"
->>>>>>> c25e2d2 (show color in status bar)
+    printf "^b#b48ead^^c#2e3440^  ^b#2e3440^^c#b48ead^ $Date"
 }
 
 dwm_date
