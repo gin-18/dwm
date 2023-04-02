@@ -2,7 +2,7 @@
 
 dwm_date () {
     Date=$(date +'%Y/%m/%d %a %H:%M')
-    printf "^b#b48ead^^c#2e3440^  ^b#2e3440^^c#b48ead^ $Date"
+    printf "^b#f4b8e4^^c#303446^  ^b#303446^^c#f4b8e4^ $Date"
 }
 
 dwm_date
