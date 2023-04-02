@@ -44,11 +44,11 @@ static const char crust[]                   = "#232634";
 
 static const char *colors[][3] = {
     /*                    fg     bg      border */
-    [SchemeNorm]      = { text, base,     subtext0 },
-    [SchemeSel]       = { text, base,     surface0 },
+    [SchemeNorm]      = { text, base,     mantle   },
+    [SchemeSel]       = { text, base,     subtext0 },
     [SchemeHid]       = { text, base,     base     },
     [SchemeStatus]    = { text, base,     base     }, // Statusbar right {text,background,not used but cannot be empty}
-    [SchemeTagsSel]   = { text, surface1, base     }, // Tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsSel]   = { base, lavender, base     }, // Tagbar left selected {text,background,not used but cannot be empty}
     [SchemeTagsNorm]  = { text, base,     base     }, // Tagbar left unselected {text,background,not used but cannot be empty}
     [SchemeInfoSel]   = { text, base,     base     }, // infobar middle  selected {text,background,not used but cannot be empty}
     [SchemeInfoNorm]  = { text, base,     base     }, // infobar middle  unselected {text,background,not used but cannot be empty}
