@@ -1,3 +1,3 @@
 #!/bin/bash
 
-feh --bg-fill --no-fehbg -z ~/some/pictures/nord/*.png
+feh --bg-fill --no-fehbg -z ~/some/pictures/catppuccin/*.png
