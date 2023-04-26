@@ -45,7 +45,7 @@ static const char crust[]                   = "#232634";
 static const char *colors[][3] = {
     /*                    fg     bg      border */
     [SchemeNorm]      = { text, base,     mantle   },
-    [SchemeSel]       = { text, base,     subtext0 },
+    [SchemeSel]       = { text, surface0, subtext0 },
     [SchemeHid]       = { text, base,     base     },
     [SchemeStatus]    = { text, base,     base     }, // Statusbar right {text,background,not used but cannot be empty}
     [SchemeTagsSel]   = { base, lavender, base     }, // Tagbar left selected {text,background,not used but cannot be empty}
@@ -55,7 +55,7 @@ static const char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "" };
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -64,7 +64,7 @@ static const Rule rules[] = {
      */
     /* class                            instance    title       tags mask     isfloating   monitor */
     { "Gimp",                           NULL,       NULL,       1 << 3,       0,           -1 },
-    { "Firefox",                        NULL,       NULL,       1 << 1,       0,           -1 },
+    { "firefox",                        NULL,       NULL,       1 << 1,       0,           -1 },
     { "Chromium",                       NULL,       NULL,       1 << 1,       0,           -1 },
     { "Microsoft-edge-beta",            NULL,       NULL,       1 << 1,       0,           -1 },
     { "Lxappearance",                   NULL,       NULL,       0,            1,           -1 },
