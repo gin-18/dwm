@@ -8,6 +8,12 @@
 
 ![dwm-ranger-btop](https://github.com/GIN-18/pictures/blob/master/readme-images/dwm/dwm-ranger-btop.png?raw=true)
 
+## 内容列表
+
+* [依赖的软件包](#依赖的软件包)
+* [安装](#安装)
+* [说明](#说明)
+
 ## 依赖的软件包
 
 ```
@@ -29,8 +35,6 @@ nerd-fonts-fira-code
 ```
 
 ## 安装
-
----
 
 ```sh
 mkdir ~/suckless && cd suckless
