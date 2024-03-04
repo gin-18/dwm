@@ -2,4 +2,4 @@
 
 xbacklight -inc 5
 
-bash ~/suckless/dwm/scripts/dwm-status-refresh.sh
+bash ~/github/gin-18/dwm/scripts/dwm-status-refresh.sh

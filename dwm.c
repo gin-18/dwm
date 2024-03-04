@@ -1619,7 +1619,7 @@ run(void)
 
 void
 runAutostart(void) {
-	system("cd ~/suckless/dwm/scripts; ./autostart.sh &");
+	system("cd ~/github/gin-18/dwm/scripts; ./autostart.sh &");
 }
 
 void

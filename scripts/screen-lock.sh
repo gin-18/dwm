@@ -1,3 +1,3 @@
 #!/bin/bash
 
-i3lock -i ~/some/pictures/i3lock/i3lock.png
+i3lock -i ~/github/gin-18/pictures/i3lock/i3lock.png

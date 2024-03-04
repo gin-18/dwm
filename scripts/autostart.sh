@@ -11,7 +11,7 @@ done
 
 xrdb merge ~/.Xresources
 xinput --set-prop 11 "libinput Tapping Enabled" 1
-/bin/bash ~/suckless/dwm/scripts/dwm-wallpaper.sh &
+/bin/bash ~/github/gin-18/dwm/scripts/dwm-wallpaper.sh &
 
 # 状态栏的刷新
 while true; do
