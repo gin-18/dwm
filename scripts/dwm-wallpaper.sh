@@ -1,3 +1,3 @@
 #!/bin/bash
 
-feh --bg-fill --no-fehbg -z ~/some/pictures/catppuccin/*.png
+feh --bg-fill --no-fehbg -z ~/github/gin-18/pictures/wallpaper/catppuccin/*.png
