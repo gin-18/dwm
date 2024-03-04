@@ -1,12 +1,12 @@
 # dwm - catppuccin theme
 
-![dwm-desktop](https://github.com/GIN-18/pictures/blob/master/readme-images/dwm/dwm-desktop.png?raw=true)
+![dwm-desktop](https://github.com/gin-18/pictures/blob/master/readme/dwm/dwm-desktop.png?raw=true)
 
-![dwm-firefox-musicfox-ranger](https://github.com/GIN-18/pictures/blob/master/readme-images/dwm/dwm-firefox-musicfox-ranger.png?raw=true)
+![dwm-firefox-musicfox-ranger](https://github.com/gin-18/pictures/blob/master/readme/dwm/dwm-firefox-musicfox-ranger.png?raw=true)
 
-![dwm-nvim](https://github.com/GIN-18/pictures/blob/master/readme-images/dwm/dwm-nvim.png?raw=true)
+![dwm-nvim](https://github.com/gin-18/pictures/blob/master/readme/dwm/dwm-nvim.png?raw=true)
 
-![dwm-ranger-btop](https://github.com/GIN-18/pictures/blob/master/readme-images/dwm/dwm-ranger-btop.png?raw=true)
+![dwm-ranger-btop](https://github.com/gin-18/pictures/blob/master/readme/dwm/dwm-ranger-btop.png?raw=true)
 
 ## 内容列表
 
