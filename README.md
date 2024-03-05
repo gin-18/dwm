@@ -29,9 +29,7 @@ alsa-util
 
 xorg-xbacklight
 
-ttf-fira-code
-
-nerd-fonts-fira-code
+ttf-firacode-nerd
 ```
 
 ## 安装
