@@ -2,11 +2,13 @@
 
 ![dwm-desktop](https://github.com/gin-18/pictures/blob/master/readme/dwm/dwm-desktop.png?raw=true)
 
-![dwm-firefox-musicfox-ranger](https://github.com/gin-18/pictures/blob/master/readme/dwm/dwm-firefox-musicfox-ranger.png?raw=true)
+![dwm-nvim-alpha](https://github.com/gin-18/pictures/blob/master/readme/dwm/dwm-nvim-alpha.png?raw=true)
 
-![dwm-nvim](https://github.com/gin-18/pictures/blob/master/readme/dwm/dwm-nvim.png?raw=true)
+![dwm-nvim-code-firefox](https://github.com/gin-18/pictures/blob/master/readme/dwm/dwm-nvim-code-firefox.png?raw=true)
 
-![dwm-ranger-btop](https://github.com/gin-18/pictures/blob/master/readme/dwm/dwm-ranger-btop.png?raw=true)
+![dwm-yazi](https://github.com/gin-18/pictures/blob/master/readme/dwm/dwm-yazi.png?raw=true)
+
+![dwm-btop](https://github.com/gin-18/pictures/blob/master/readme/dwm/dwm-btop.png?raw=true)
 
 ## 内容列表
 
@@ -35,9 +37,7 @@ ttf-firacode-nerd
 ## 安装
 
 ```sh
-mkdir ~/suckless && cd suckless
-
-git clone https://github.com/GIN-18/dwm.git --depth 1
+git clone https://github.com/gin-18/dwm.git --depth 1
 
 sudo make clean install
 ```
@@ -47,6 +47,15 @@ sudo make clean install
 在 `scripts/dwm-wallpaper.sh` 脚本中修改 `壁纸目录`。
 
 在 `scripts/screen-lock.sh` 脚本中修改 `锁屏壁纸`。
+
+在 `dwm.c` 中的下面这个函数中修改启动脚本的路径。
+
+```c
+void
+runAutostart(void) {
+  system("cd ~/github/gin-18/dwm/scripts; ./autostart.sh &");
+}
+```
 
 `MODKEY` 是 `Window` 键。
 
