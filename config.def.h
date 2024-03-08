@@ -114,8 +114,6 @@ static const char *volDown[] = { "/home/gin/github/gin-18/dwm/scripts/vol-down.s
 static const char *volTog[] = { "/home/gin/github/gin-18/dwm/scripts/vol-toggle.sh", NULL};
 static const char *backLightUp[] = { "/home/gin/github/gin-18/dwm/scripts/backlight-up.sh", NULL};
 static const char *backLightDown[] = { "/home/gin/github/gin-18/dwm/scripts/backlight-down.sh", NULL};
-static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 //static const char *roficmd[]  = { "rofi", "-show", "drun", NULL};
 //static const char *rofiRun[]  = { "rofi", "-show", "run", NULL};
 
@@ -150,7 +148,6 @@ static Key keys[] = {
     { MODKEY,                       XK_F4,     spawn,          {.v = volTog } },
     { MODKEY,                       XK_F2,     spawn,          {.v = backLightUp} },
     { MODKEY,                       XK_F1,     spawn,          {.v = backLightDown} },
-    { MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
     { MODKEY,                       XK_b,      togglebar,      {0} },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
