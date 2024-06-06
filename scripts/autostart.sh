@@ -15,6 +15,6 @@ xinput --set-prop 11 "libinput Tapping Enabled" 1
 
 # 状态栏的刷新
 while true; do
-  /bin/bash ./dwm-status-refresh.sh
+  /bin/bash ./dwm-status.sh
   sleep 1
 done

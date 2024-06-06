@@ -8,7 +8,9 @@ dwm_battery () {
   if [ "$STATUS" = "Charging" ]; then
     printf "^c#303446^^b#81c8be^  ^b#1e1e2e^^c#81c8be^ %s%% %s" "$CHARGE"
   else
-    if [ "$CHARGE" -le 15 ]; then
+    if [ "$CHARGE" -le 5 ]; then
+      shutdown -h now
+    elif [ "$CHARGE" -le 15 ]; then
       printf "^c#303446^^b#e78284^  ^b#1e1e2e^^c#e78284^ %s%% %s" "$CHARGE"
     elif [ "$CHARGE" -le 30 ]; then
       printf "^c#303446^^b#e5c890^  ^b#1e1e2e^^c#e5c890^ %s%% %s" "$CHARGE"
