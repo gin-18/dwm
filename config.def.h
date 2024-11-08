@@ -47,14 +47,14 @@ static const char *colors[][3] = {
     [SchemeSel]       = { text, surface0, subtext0 },
     [SchemeHid]       = { text, base,     base     },
     [SchemeStatus]    = { text, base,     base     }, // Statusbar right {text,background,not used but cannot be empty}
-    [SchemeTagsSel]   = { base, lavender, base     }, // Tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsSel]   = { base, blue,     base     }, // Tagbar left selected {text,background,not used but cannot be empty}
     [SchemeTagsNorm]  = { text, base,     base     }, // Tagbar left unselected {text,background,not used but cannot be empty}
     [SchemeInfoSel]   = { text, base,     base     }, // infobar middle  selected {text,background,not used but cannot be empty}
     [SchemeInfoNorm]  = { text, base,     base     }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
 /* tagging */
-static const char *tags[] = { "󰣇", "󰈹", "󰝚", "󰕧", "󰌢" };
+static const char *tags[] = { "", "", "", "󰍹" };
 
 static const Rule rules[] = {
     /* xprop(1):
