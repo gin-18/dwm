@@ -50,10 +50,7 @@
 #define INTERSECT(x,y,w,h,m)    (MAX(0, MIN((x)+(w),(m)->wx+(m)->ww) - MAX((x),(m)->wx)) \
                                * MAX(0, MIN((y)+(h),(m)->wy+(m)->wh) - MAX((y),(m)->wy)))
 #define ISVISIBLE(C)            ((C->tags & C->mon->tagset[C->mon->seltags]))
-/* NOTE: keep */
 #define HIDDEN(C)               ((getstate(C->win) == IconicState))
-#define LENGTH(X)               (sizeof X / sizeof X[0])
-/* NOTE: keep */
 #define MOUSEMASK               (BUTTONMASK|PointerMotionMask)
 #define WIDTH(X)                ((X)->w + 2 * (X)->bw)
 #define HEIGHT(X)               ((X)->h + 2 * (X)->bw)
@@ -196,9 +193,6 @@ static void monocle(Monitor *m);
 static void motionnotify(XEvent *e);
 static void movemouse(const Arg *arg);
 static Client *nexttiled(Client *c);
-/* NOTE: keep
-  * static void pop(Client *);
-  * NOTE: keep */
 static void pop(Client *c);
 static void propertynotify(XEvent *e);
 static void quit(const Arg *arg);
@@ -216,15 +210,6 @@ static void setclientstate(Client *c, long state);
 static void setfocus(Client *c);
 static void setfullscreen(Client *c, int fullscreen);
 static void setgaps(int oh, int ov, int ih, int iv);
-static void incrgaps(const Arg *arg);
-static void incrigaps(const Arg *arg);
-static void incrogaps(const Arg *arg);
-static void incrohgaps(const Arg *arg);
-static void incrovgaps(const Arg *arg);
-static void incrihgaps(const Arg *arg);
-static void incrivgaps(const Arg *arg);
-static void togglegaps(const Arg *arg);
-static void defaultgaps(const Arg *arg);
 static void setlayout(const Arg *arg);
 static void setmfact(const Arg *arg);
 static void setup(void);
@@ -451,19 +436,6 @@ attachstack(Client *c)
 	c->mon->stack = c;
 }
 
-Client *
-wintoclient(Window w)
-{
-	Client *c;
-	Monitor *m;
-
-	for (m = mons; m; m = m->next)
-		for (c = m->clients; c; c = c->next)
-			if (c->win == w)
-				return c;
-	return NULL;
-}
-
 void
 buttonpress(XEvent *e)
 {
@@ -488,30 +460,6 @@ buttonpress(XEvent *e)
 		if (i < LENGTH(tags)) {
 			click = ClkTagBar;
 			arg.ui = 1 << i;
-      // NOTE: keep
-		// } else if (ev->x < x + blw)
-		// 	click = ClkLtSymbol;
-		// /* 2px right padding */
-		// //else if (ev->x > selmon->ww - TEXTW(stext) + lrpad - 2)
-		// else if (ev->x > selmon->ww - TEXTW(stext))
-		// 	click = ClkStatusText;
-		// else {
-		// 	x += blw;
-		// 	c = m->clients;
-		//
-		// 	do {
-		// 		if (!ISVISIBLE(c))
-		// 			continue;
-		// 		else
-		// 			x += (1.0 / (double)m->bt) * m->btw;
-		// 	} while (ev->x > x && (c = c->next));
-		//
-		// 	if (c) {
-		// 		click = ClkWinTitle;
-		// 		arg.v = c;
-		// 	}
-		// }
-      // NOTE: keep
 		} else if (ev->x < x + TEXTW(selmon->ltsymbol))
 			click = ClkLtSymbol;
 		else if (ev->x > selmon->ww - (int)TEXTW(stext))
@@ -527,9 +475,6 @@ buttonpress(XEvent *e)
 	for (i = 0; i < LENGTH(buttons); i++)
 		if (click == buttons[i].click && buttons[i].func && buttons[i].button == ev->button
 		&& CLEANMASK(buttons[i].mask) == CLEANMASK(ev->state))
-      // NOTE: keep
-			// buttons[i].func((click == ClkTagBar || click == ClkWinTitle) && buttons[i].arg.i == 0 ? &arg : &buttons[i].arg);
-      // NOTE: keep
 			buttons[i].func(click == ClkTagBar && buttons[i].arg.i == 0 ? &arg : &buttons[i].arg);
 }
 
@@ -562,10 +507,6 @@ cleanup(void)
 		cleanupmon(mons);
 	for (i = 0; i < CurLast; i++)
 		drw_cur_free(drw, cursor[i]);
-      // NOTE: keep
-	// for (i = 0; i < LENGTH(colors) + 1; i++)
-	// 	free(scheme[i]);
-      // NOTE: keep
 	for (i = 0; i < LENGTH(colors); i++)
 		free(scheme[i]);
 	free(scheme);
@@ -1131,15 +1072,6 @@ gettextprop(Window w, Atom atom, char *text, unsigned int size)
 	text[0] = '\0';
 	if (!XGetTextProperty(dpy, w, &name, atom) || !name.nitems)
 		return 0;
-      // NOTE: keep
-	// if (name.encoding == XA_STRING)
-	// 	strncpy(text, (char *)name.value, size - 1);
-	// else {
-	// 	if (XmbTextPropertyToTextList(dpy, &name, &list, &n) >= Success && n > 0 && *list) {
-	// 		strncpy(text, *list, size - 1);
-	// 		XFreeStringList(list);
-	// 	}
-      // NOTE: keep
 	if (name.encoding == XA_STRING) {
 		strncpy(text, (char *)name.value, size - 1);
 	} else if (XmbTextPropertyToTextList(dpy, &name, &list, &n) >= Success && n > 0 && *list) {
@@ -1177,18 +1109,6 @@ grabkeys(void)
 {
 	updatenumlockmask();
 	{
-      // NOTE: keep
-		// unsigned int i, j;
-		// unsigned int modifiers[] = { 0, LockMask, numlockmask, numlockmask|LockMask };
-		// KeyCode code;
-		//
-		// XUngrabKey(dpy, AnyKey, AnyModifier, root);
-		// for (i = 0; i < LENGTH(keys); i++)
-		// 	if ((code = XKeysymToKeycode(dpy, keys[i].keysym)))
-		// 		for (j = 0; j < LENGTH(modifiers); j++)
-		// 			XGrabKey(dpy, code, keys[i].mod | modifiers[j], root,
-		// 				True, GrabModeAsync, GrabModeAsync);
-      // NOTE: keep
 		unsigned int i, j, k;
 		unsigned int modifiers[] = { 0, LockMask, numlockmask, numlockmask|LockMask };
 		int start, end, skip;
@@ -1313,16 +1233,6 @@ manage(Window w, XWindowAttributes *wa)
 		applyrules(c);
 	}
 
-     // NOTE: keep
-	// if (c->x + WIDTH(c) > c->mon->mx + c->mon->mw)
-	// 	c->x = c->mon->mx + c->mon->mw - WIDTH(c);
-	// if (c->y + HEIGHT(c) > c->mon->my + c->mon->mh)
-	// 	c->y = c->mon->my + c->mon->mh - HEIGHT(c);
-	// c->x = MAX(c->x, c->mon->mx);
-	// /* only fix client y-offset, if the client center might cover the bar */
-	// c->y = MAX(c->y, ((c->mon->by == c->mon->my) && (c->x + (c->w / 2) >= c->mon->wx)
-	// 	&& (c->x + (c->w / 2) < c->mon->wx + c->mon->ww)) ? bh : c->mon->my);
-     // NOTE: keep
 	if (c->x + WIDTH(c) > c->mon->wx + c->mon->ww)
 		c->x = c->mon->wx + c->mon->ww - WIDTH(c);
 	if (c->y + HEIGHT(c) > c->mon->wy + c->mon->wh)
@@ -1378,11 +1288,6 @@ maprequest(XEvent *e)
 	static XWindowAttributes wa;
 	XMapRequestEvent *ev = &e->xmaprequest;
 
-     // NOTE: keep
-	// if (!XGetWindowAttributes(dpy, ev->window, &wa))
-	// 	return;
-	// if (wa.override_redirect)
-     // NOTE: keep
 	if (!XGetWindowAttributes(dpy, ev->window, &wa) || wa.override_redirect)
 		return;
 	if (!wintoclient(ev->window))
@@ -1517,9 +1422,6 @@ propertynotify(XEvent *e)
 				arrange(c->mon);
 			break;
 		case XA_WM_NORMAL_HINTS:
-      // NOTE: keep
-			// updatesizehints(c);
-      // NOTE: keep
 			c->hintsvalid = 0;
 			break;
 		case XA_WM_HINTS:
@@ -1810,96 +1712,6 @@ setgaps(int oh, int ov, int ih, int iv)
 }
 
 void
-togglegaps(const Arg *arg)
-{
-	enablegaps = !enablegaps;
-	arrange(selmon);
-}
-
-void
-defaultgaps(const Arg *arg)
-{
-	setgaps(gappoh, gappov, gappih, gappiv);
-}
-
-void
-incrgaps(const Arg *arg)
-{
-	setgaps(
-		selmon->gappoh + arg->i,
-		selmon->gappov + arg->i,
-		selmon->gappih + arg->i,
-		selmon->gappiv + arg->i
-	);
-}
-
-void
-incrigaps(const Arg *arg)
-{
-	setgaps(
-		selmon->gappoh,
-		selmon->gappov,
-		selmon->gappih + arg->i,
-		selmon->gappiv + arg->i
-	);
-}
-
-void
-incrogaps(const Arg *arg)
-{
-	setgaps(
-		selmon->gappoh + arg->i,
-		selmon->gappov + arg->i,
-		selmon->gappih,
-		selmon->gappiv
-	);
-}
-
-void
-incrohgaps(const Arg *arg)
-{
-	setgaps(
-		selmon->gappoh + arg->i,
-		selmon->gappov,
-		selmon->gappih,
-		selmon->gappiv
-	);
-}
-
-void
-incrovgaps(const Arg *arg)
-{
-	setgaps(
-		selmon->gappoh,
-		selmon->gappov + arg->i,
-		selmon->gappih,
-		selmon->gappiv
-	);
-}
-
-void
-incrihgaps(const Arg *arg)
-{
-	setgaps(
-		selmon->gappoh,
-		selmon->gappov,
-		selmon->gappih + arg->i,
-		selmon->gappiv
-	);
-}
-
-void
-incrivgaps(const Arg *arg)
-{
-	setgaps(
-		selmon->gappoh,
-		selmon->gappov,
-		selmon->gappih,
-		selmon->gappiv + arg->i
-	);
-}
-
-void
 setlayout(const Arg *arg)
 {
 	if (!arg || !arg->v || arg->v != selmon->lt[selmon->sellt])
@@ -1935,10 +1747,6 @@ setup(void)
 	XSetWindowAttributes wa;
 	Atom utf8string;
 
-	/* clean up any zombies immediately */
-      // NOTE: keep
-	sigchld(0);
-      // NOTE: keep
 	struct sigaction sa;
 
 	/* do not transform children into zombies when they terminate */
@@ -2055,18 +1863,6 @@ showhide(Client *c)
 }
 
 void
-      // NOTE: keep
-// sigchld(int unused)
-// {
-// 	if (signal(SIGCHLD, sigchld) == SIG_ERR)
-// 		die("can't install SIGCHLD handler:");
-// 	while (0 < waitpid(-1, NULL, WNOHANG));
-// }
-//
-// void
-// spawn(const Arg *arg)
-// {
-      // NOTE: keep
 spawn(const Arg *arg)
 {
 	struct sigaction sa;
@@ -2077,13 +1873,6 @@ spawn(const Arg *arg)
 		if (dpy)
 			close(ConnectionNumber(dpy));
 		setsid();
-      // NOTE: keep
-		// execvp(((char **)arg->v)[0], (char **)arg->v);
-		// fprintf(stderr, "dwm: execvp %s", ((char **)arg->v)[0]);
-		// perror(" failed");
-		// exit(EXIT_SUCCESS);
-      // NOTE: keep
-
 		sigemptyset(&sa.sa_mask);
 		sa.sa_flags = 0;
 		sa.sa_handler = SIG_DFL;

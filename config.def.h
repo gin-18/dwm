@@ -104,7 +104,6 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-//static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *termcmd[]  = { "wezterm", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL};
@@ -118,25 +117,7 @@ static const char *backLightDown[] = { "/home/gin/github/gin-18/dwm/scripts/back
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
-    //{ MODKEY|Mod1Mask,              XK_h,      incrgaps,       {.i = +1 } },
-    //{ MODKEY|Mod1Mask,              XK_l,      incrgaps,       {.i = -1 } },
-    //{ MODKEY|Mod1Mask|ShiftMask,    XK_h,      incrogaps,      {.i = +1 } },
-    //{ MODKEY|Mod1Mask|ShiftMask,    XK_l,      incrogaps,      {.i = -1 } },
-    //{ MODKEY|Mod1Mask|ControlMask,  XK_h,      incrigaps,      {.i = +1 } },
-    //{ MODKEY|Mod1Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } },
-    //{ MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
-    //{ MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
-    //{ MODKEY,                       XK_y,      incrihgaps,     {.i = +1 } },
-    //{ MODKEY,                       XK_o,      incrihgaps,     {.i = -1 } },
-    //{ MODKEY|ControlMask,           XK_y,      incrivgaps,     {.i = +1 } },
-    //{ MODKEY|ControlMask,           XK_o,      incrivgaps,     {.i = -1 } },
-    //{ MODKEY|Mod1Mask,              XK_y,      incrohgaps,     {.i = +1 } },
-    //{ MODKEY|Mod1Mask,              XK_o,      incrohgaps,     {.i = -1 } },
-    //{ MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
-    //{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
     //{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-    //{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
-    //{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofiRun } },
     { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY|ShiftMask,             XK_w,      spawn,          {.v = alterWallpaper } },
