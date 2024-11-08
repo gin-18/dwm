@@ -82,6 +82,7 @@ static const Rule rules[] = {
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
@@ -114,8 +115,6 @@ static const char *volDown[] = { "/home/gin/github/gin-18/dwm/scripts/vol-down.s
 static const char *volTog[] = { "/home/gin/github/gin-18/dwm/scripts/vol-toggle.sh", NULL};
 static const char *backLightUp[] = { "/home/gin/github/gin-18/dwm/scripts/backlight-up.sh", NULL};
 static const char *backLightDown[] = { "/home/gin/github/gin-18/dwm/scripts/backlight-down.sh", NULL};
-//static const char *roficmd[]  = { "rofi", "-show", "drun", NULL};
-//static const char *rofiRun[]  = { "rofi", "-show", "run", NULL};
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
