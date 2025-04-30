@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx          = 3;        /* border pixel of windows */
+static const unsigned int borderpx          = 2;        /* border pixel of windows */
 static const unsigned int snap              = 32;       /* snap pixel */
 static const unsigned int gappih            = 6;       /* horiz inner gap between windows */
 static const unsigned int gappiv            = 6;       /* vert inner gap between windows */
@@ -43,14 +43,14 @@ static const char crust[]                   = "#11111b";
 
 static const char *colors[][3] = {
     /*                    fg     bg      border */
-    [SchemeNorm]      = { text,  base,     mantle   },
-    [SchemeSel]       = { text,  surface0, subtext0 },
-    [SchemeHid]       = { text,  base,     base     },
-    [SchemeStatus]    = { text,  base,     base     }, // Statusbar right {text,background,not used but cannot be empty}
-    [SchemeTagsSel]   = { crust, blue,     base     }, // Tagbar left selected {text,background,not used but cannot be empty}
-    [SchemeTagsNorm]  = { text,  base,     base     }, // Tagbar left unselected {text,background,not used but cannot be empty}
-    [SchemeInfoSel]   = { text,  base,     base     }, // infobar middle  selected {text,background,not used but cannot be empty}
-    [SchemeInfoNorm]  = { text,  base,     base     }, // infobar middle  unselected {text,background,not used but cannot be empty}
+    [SchemeNorm]      = { text,  base,     base },
+    [SchemeSel]       = { text,  surface0, blue },
+    [SchemeHid]       = { text,  base,     base },
+    [SchemeStatus]    = { text,  base,     base }, // Statusbar right {text,background,not used but cannot be empty}
+    [SchemeTagsSel]   = { crust, blue,     base }, // Tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsNorm]  = { text,  base,     base }, // Tagbar left unselected {text,background,not used but cannot be empty}
+    [SchemeInfoSel]   = { text,  base,     base }, // infobar middle  selected {text,background,not used but cannot be empty}
+    [SchemeInfoNorm]  = { text,  base,     base }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
 /* tagging */
