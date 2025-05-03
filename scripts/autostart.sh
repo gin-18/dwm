@@ -10,7 +10,6 @@ for value in ${arr[@]}; do
   fi
 done
 
-xrdb merge ~/.Xresources
 xinput --set-prop ${touchpad_id} "libinput Tapping Enabled" 1
 /bin/bash ~/github/gin-18/dwm/scripts/dwm-wallpaper.sh &
 

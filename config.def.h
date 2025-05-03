@@ -11,9 +11,9 @@ static const int smartgaps                  = 0;        /* 1 means no outer gap 
 static const int showbar                    = 1;        /* 0 means no bar */
 static const int topbar                     = 1;        /* 0 means bottom bar */
 static const int user_bh                    = 10;        /* 2 is the default spacing around the bar's font */
-static const char *fonts[]                  = { "FiraCode Nerd Font Mono:pixelsize=24:style=Medium:antialias=true:autohint=true" };
-static const char dmenufont[]               = "FiraCode Nerd Font Mono:pixelsize=24:style=Medium:antialias=true:autohint=true";
-/* colors catppuccin-frappe */
+static const char *fonts[]                  = { "FiraCode Nerd Font Propo:pixelsize=24:style=Regular:antialias=true:autohint=true" };
+static const char dmenufont[]               = "FiraCode Nerd Font Propo:pixelsize=24:style=Regular:antialias=true:autohint=true";
+/* colors catppuccin-mocha */
 static const char rosewater[]               = "#f5e0dc";
 static const char flamingo[]                = "#f2cdcd";
 static const char pink[]                    = "#f5c2e7";
@@ -76,6 +76,7 @@ static const Rule rules[] = {
     { "Gthumb",                         NULL,       NULL,       0,            1,           -1 },
     { "MPlayer",                        NULL,       NULL,       0,            1,           -1 },
     { "fcitx5-config-qt",               NULL,       NULL,       0,            1,           -1 },
+    { "wechat",                         NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
